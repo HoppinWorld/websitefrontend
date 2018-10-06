@@ -1,0 +1,5 @@
+[book]
+authors = ["Joël Lupien (Jojolepro)"]
+multilingual = false
+src = "src"
+title = "HoppinWorld Wiki"
