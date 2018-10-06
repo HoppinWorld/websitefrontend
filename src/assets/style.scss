@@ -1,0 +1,19 @@
+//import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+$theme-colors: (
+  //primary: #0075BE,
+  primary: #0000FF,
+  //success: #FF0000,
+  warning: #FECD1F,
+  danger: #E63032
+);
+
+//$border-width: 0 !default;
+//$input-btn-border-width: 0 !default;
+
+$border-radius: 0 !default;
+$border-radius-lg: 0 !default;
+$border-radius-sm: 0 !default;
+
+@import "~bootstrap/scss/bootstrap";
