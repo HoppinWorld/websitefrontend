@@ -24,12 +24,19 @@
       </div>
       <div class="mx-2 flex-grid-2">
         <h4>Mapper: {{map.mapper}}</h4>
+        <b-button variant=success v-on:click="register()">Register</b-button>
+        <b-button variant=success v-on:click="pass()">Set Pass</b-button>
+        <b-button variant=success v-on:click="login()">Login</b-button>
+        <p>Data: {{ remote }}</p>
+        <p>Errors: {{ errors }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -42,7 +49,59 @@ export default {
         ],
         mapper: 'Jojolepro',
         playcount: 15
-      }
+      },
+      remote: [],
+      errors: [],
+      resetToken: '57360c70-cfd2-4356-8163-46b6fd6a2705'
+    }
+  },
+  methods: {
+    //mounted () {
+    register: function() {
+      axios.post('http://127.0.0.1:27015/register',
+        {
+          username: 'test',
+          email: 'test@test.com'
+        }
+      ).then(response => {
+        this.remote = response.data
+        this.errors = []
+      })
+        .catch(e => {
+          this.remote = []
+          this.errors.push(e)
+        })
+    },
+    pass: function() {
+      axios.post('http://127.0.0.1:27015/changepassword',
+        {
+          token: this.resetToken,
+          password: 'bob123'
+        }
+      ).then(response => {
+        this.remote = response.data
+        this.errors = []
+      })
+        .catch(e => {
+          this.remote = []
+          this.errors.push(e)
+        })
+    },
+    login: function() {
+      axios.post('http://127.0.0.1:27015/login',
+        {
+          email: 'test@test.com',
+          password: 'bob123'
+        }
+      ).then(response => {
+        this.remote = response.data
+        this.errors = []
+      })
+        .catch(e => {
+          this.remote = []
+          this.errors.push(e)
+          //errors foreach .response.{status,statusText}
+        })
     }
   }
 }
