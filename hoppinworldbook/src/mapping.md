@@ -59,7 +59,7 @@ Ooof, that was a lot of work! The good news is that we are now done with the har
 At the top of the screen, change Blender Render to Cycles Render.
 ![Cycles Render](./images/cycles_render.png)
 
-At the bottom of the screen, change the rendering mode from solid to material to "material".
+At the bottom of the screen, change the rendering mode from solid to "material".
 This is the icon you are looking for:
 ![Material icon](./images/mat_icon.png)
 
