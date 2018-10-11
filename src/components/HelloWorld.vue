@@ -3,7 +3,7 @@
     <h1>Test my dude</h1>
      <b-button variant=success>Sup</b-button>
     <h1>{{ msg }}</h1>
-    <h2>Test Links</h2>
+    <h2 class="text-dark">Test Links</h2>
     <ul>
       <li>
         <router-link to="/map">MapInfo</router-link>
