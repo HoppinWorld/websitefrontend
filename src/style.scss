@@ -1,10 +1,28 @@
 //import 'bootstrap/dist/css/bootstrap.css'
 //import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-$theme-colors: (
+
+/*
+Color theme:
+Black #403F4C
+Primary/Blue #2660A4
+Primary/Orange #FC8941
+Secondary/Yellow #E9D758
+White #FCF7FF
+*/
+
+/*$theme-colors: (
   primary: #3185FC,
   success: #2bce51,
   warning: #FECD1F,
+  danger: #E63032,
+  dark: #403F4C
+);*/
+
+$theme-colors: (
+  primary: #2660A4,
+  success: #FC8941,
+  warning: #E9D758,
   danger: #E63032,
   dark: #403F4C
 );
