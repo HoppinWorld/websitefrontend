@@ -5,6 +5,8 @@ import HelloWorld from '@/components/HelloWorld'
 import MapInfo from '@/components/MapInfo'
 import Download from '@/components/Download'
 import Wiki from '@/components/Wiki'
+import Login from '@/components/Login'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -29,6 +31,16 @@ export default new Router({
       path: '/wiki',
       name: 'Wiki',
       component: Wiki
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

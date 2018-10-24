@@ -18,3 +18,9 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+export const globalStore = new Vue({
+  data: {
+    auth_token: ''
+  }
+})
