@@ -24,11 +24,16 @@
       </div>
       <div class="mx-2 flex-grid-2">
         <h4>Mapper: {{map.mapper}}</h4>
-        <b-button variant=success v-on:click="register()">Register</b-button>
-        <b-button variant=success v-on:click="pass()">Set Pass</b-button>
-        <b-button variant=success v-on:click="login()">Login</b-button>
-        <p>Data: {{ remote }}</p>
         <p>Errors: {{ errors }}</p>
+      </div>
+    </div>
+
+    <!-- scores -->
+    <h2>Scores</h2>
+    <div class="container">
+      <div class="row" v-for="score in scores">
+        <div class="col-md-8"><h3>User: {{score.username}}</h3></div>
+        <div class="col-md-2"><h5>Time: {{score.total_time}}</h5></div>
       </div>
     </div>
   </div>
@@ -41,68 +46,33 @@ export default {
   data () {
     return {
       map: {
-        name: 'Lines',
-        difficulty: 'Medium',
-        description: 'This is a multiline description.\nThis is the second line',
-        categories: [
-          'Speed'
-        ],
-        mapper: 'Jojolepro',
-        playcount: 15
+        name: 'LOADING',
+        difficulty: '',
+        description: '',
+        categories: [],
+        mapper: '',
+        playcount: 0
       },
-      remote: [],
+      scores: [],
       errors: [],
-      resetToken: '57360c70-cfd2-4356-8163-46b6fd6a2705'
     }
   },
-  methods: {
-    //mounted () {
-    register: function() {
-      axios.post('http://127.0.0.1:27015/register',
-        {
-          username: 'test',
-          email: 'test@test.com'
-        }
-      ).then(response => {
-        this.remote = response.data
-        this.errors = []
-      })
-        .catch(e => {
-          this.remote = []
-          this.errors.push(e)
-        })
-    },
-    pass: function() {
-      axios.post('http://127.0.0.1:27015/changepassword',
-        {
-          token: this.resetToken,
-          password: 'bob123'
-        }
-      ).then(response => {
-        this.remote = response.data
-        this.errors = []
-      })
-        .catch(e => {
-          this.remote = []
-          this.errors.push(e)
-        })
-    },
-    login: function() {
-      axios.post('http://127.0.0.1:27015/login',
-        {
-          email: 'test@test.com',
-          password: 'bob123'
-        }
-      ).then(response => {
-        this.remote = response.data
-        this.errors = []
-      })
-        .catch(e => {
-          this.remote = []
-          this.errors.push(e)
-          //errors foreach .response.{status,statusText}
-        })
-    }
+  mounted: function () {
+    axios.get("https://hoppinworld.net:27015/map/"+this.$route.params.id)
+    .then(response => {
+      this.map = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+
+    axios.get("https://hoppinworld.net:27015/map/"+this.$route.params.id+"/scores")
+    .then(response => {
+      this.scores = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>

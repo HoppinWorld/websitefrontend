@@ -1,9 +1,12 @@
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="/">
-      <img class="d-inline-block align-top" alt="HoppinWorld" src="../assets/images/HoppinWorldPattern3BigTransparent2.png" width="48" height="48" />
-      <h3 class="text-dark float-right align-self-center mr-3">HoppinWorld</h3>
+      <img class="d-inline-block align-top" alt="HoppinWorld" src="/static/assets/images/HoppinWorldPattern3BigTransparent2.png" width="48" height="48" />
     </a>
+
+    <div class="text-dark mr-3" style="position: relative; padding: 0px 80px;">
+      <h3 class="banner-text">HoppinWorld</h3>
+    </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -13,28 +16,54 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><router-link class="nav-link" to="/"><b-button variant=warning>Home</b-button></router-link></li>
         <li class="nav-item"><router-link class="nav-link" to="/download"><b-button variant=warning>Download</b-button></router-link></li>
-        <li class="nav-item"><router-link class="nav-link" to="/map"><b-button variant=warning>MapInfo</b-button></router-link></li>
+        <li class="nav-item"><router-link class="nav-link" to="/map"><b-button variant=warning>Maps</b-button></router-link></li>
         <li class="nav-item"><router-link class="nav-link" to="/rankings"><b-button variant=warning>Rankings</b-button></router-link></li>
-        <li class="nav-item"><router-link class="nav-link" to="/wiki"><b-button variant=warning>Wiki</b-button></router-link></li>
+        <li class="nav-item"><a class="nav-link" href="/wiki/index.html" target="_blank"><b-button variant=warning>Wiki</b-button></a></li>
       </ul>
 
-      <ul class="navbar-nav float-right">
-        <li class="nav-item">
-          <b-dropdown id="ddown1" text="Account" class="m-md-2">
-            <b-dropdown-item><router-link class="nav-link" to="/login"><b-button variant=warning>Login</b-button></router-link></b-dropdown-item>
-            <b-dropdown-item><router-link class="nav-link" to="/register"><b-button variant=warning>Register</b-button></router-link></b-dropdown-item>
-            <b-dropdown-item><a href="#">Settings</a></b-dropdown-item>
-            <b-dropdown-item><a href="#">Logout</a></b-dropdown-item>
-          </b-dropdown>
-        </li>
-      </ul>
+      <div class="navbar-nav">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              Account
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <b-dropdown-item v-if="!logged()">
+                <router-link class="nav-link" to="/login">
+                  <b-button variant=warning>
+                    Login
+                  </b-button>
+                </router-link>
+              </b-dropdown-item>
+
+              <b-dropdown-item v-if="!logged()">
+                <router-link class="nav-link" to="/register">
+                  <b-button variant=warning>
+                    Register
+                  </b-button>
+                </router-link>
+              </b-dropdown-item>
+
+              <b-dropdown-item v-if="logged()"><a href="#">Profile</a></b-dropdown-item>
+              <b-dropdown-item v-if="logged()"><a href="#">Settings</a></b-dropdown-item>
+              <b-dropdown-item v-if="logged()"><a href="#">Logout</a></b-dropdown-item>
+            </div>
+          </div>
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
+import {globalStore} from '../main.js'
+
 export default {
-  name: 'nav-bar'
+  name: 'nav-bar',
+  methods: {
+    logged () {
+      return globalStore.auth_token != ''
+    }
+  }
 }
 </script>
 

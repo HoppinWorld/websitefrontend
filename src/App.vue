@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <router-view/>
+    <div id="body-container"><router-view/></div>
   </div>
 </template>
 
@@ -21,5 +21,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+@media only screen and (min-width: 575px) {
+  #body-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

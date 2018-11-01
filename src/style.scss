@@ -40,6 +40,23 @@ body {
 	background-color: #FCF7FF !important;
 }
 
+.banner-img {
+  overflow: hidden;
+  width: 100%;
+}
+.banner-container {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
 //$border-width: 0 !default;
 //$input-btn-border-width: 0 !default;
 

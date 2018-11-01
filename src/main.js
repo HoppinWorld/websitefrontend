@@ -7,6 +7,12 @@ import BootstrapVue from 'bootstrap-vue'
 
 import './style.scss'
 
+export const globalStore = new Vue({
+  data: {
+    auth_token: ''
+  }
+})
+
 Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
@@ -17,10 +23,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-})
-
-export const globalStore = new Vue({
-  data: {
-    auth_token: ''
-  }
 })

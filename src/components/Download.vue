@@ -1,6 +1,11 @@
 <template>
   <div>
-    <a href="https://github.com/HoppinWorld/hoppinworldclient/releases" target="_blank"><h1>Game Download</h1></a>
+  	<h1>Downloading the Game</h1>
+    <a href="https://github.com/HoppinWorld/hoppinworldclient/releases" target="_blank"><h3>Game Download</h3></a>
+
+    <a href="https://github.com/HoppinWorld/" target="_blank"><h3>Source Code</h3></a>
+    
+    <a href="https://hoppinworld.net/wiki/install.html" target="_blank"><h3>Installation instructions</h3></a>
   </div>
 </template>
 

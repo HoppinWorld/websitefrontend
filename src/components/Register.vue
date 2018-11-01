@@ -45,7 +45,7 @@ export default {
   methods: {
     onSubmit(ev) {
     // TODO: Move to https asap
-      axios.post('http://hoppinworld.net:27015/register',
+      axios.post('https://hoppinworld.net:27015/register',
         {
           username: this.form.username,
           email: this.form.email

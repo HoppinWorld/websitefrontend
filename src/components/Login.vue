@@ -44,7 +44,7 @@ export default {
   methods: {
     onSubmit(ev) {
     // TODO: Move to https asap
-      axios.post('http://hoppinworld.net:27015/login',
+      axios.post('https://hoppinworld.net:27015/login',
         {
           email: this.form.email,
           password: this.form.password

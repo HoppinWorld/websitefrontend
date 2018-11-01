@@ -7,10 +7,12 @@ import Download from '@/components/Download'
 import Wiki from '@/components/Wiki'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
+import MapList from '@/components/MapList'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -18,19 +20,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/map',
-      name: 'MapInfo',
-      component: MapInfo
-    },
-    {
       path: '/download',
       name: 'Download',
       component: Download
-    },
-    {
-      path: '/wiki',
-      name: 'Wiki',
-      component: Wiki
     },
     {
       path: '/login',
@@ -41,6 +33,16 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/map',
+      name: 'MapList',
+      component: MapList
+    },
+    {
+      path: '/map/:id',
+      name: 'MapInfo',
+      component: MapInfo
     }
   ]
 })
