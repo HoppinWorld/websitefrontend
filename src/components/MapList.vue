@@ -5,8 +5,8 @@
       <h3 variant=error>{{err}}</h3>
     </div>
     <div v-for="map in maps">
-      <h3>{{map.name}}</h3>
-      <router-link class="nav-link" :to="mapLinkFromId(map.id)"><b-button variant=success>Info</b-button></router-link>
+      <h3 style="display: inline-block; vertical-align: middle;">{{map.name}}</h3>
+      <router-link class="nav-link map-button" :to="mapLinkFromId(map.id)"><b-button variant=success>Info</b-button></router-link>
     </div>
   </div>
 </template>
@@ -48,5 +48,8 @@ h1, h2 {
 }
 a {
   color: #42b983;
+}
+.map-button {
+  display: inline-block;
 }
 </style>

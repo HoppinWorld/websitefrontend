@@ -4,9 +4,9 @@
       <img class="d-inline-block align-top" alt="HoppinWorld" src="/static/assets/images/HoppinWorldPattern3BigTransparent2.png" width="48" height="48" />
     </a>
 
-    <div class="text-dark mr-3" style="position: relative; padding: 0px 80px;">
+    <a href="/" class="text-dark mr-3" style="position: relative; padding: 0px 80px;">
       <h3 class="banner-text">HoppinWorld</h3>
-    </div>
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>

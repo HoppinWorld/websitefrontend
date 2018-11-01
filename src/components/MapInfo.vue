@@ -24,7 +24,7 @@
       </div>
       <div class="mx-2 flex-grid-2">
         <h4>Mapper: {{map.mapper}}</h4>
-        <p>Errors: {{ errors }}</p>
+        <!-- <p>Errors: {{ errors }}</p> -->
       </div>
     </div>
 
