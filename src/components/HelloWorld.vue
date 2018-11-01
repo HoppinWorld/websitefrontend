@@ -7,18 +7,18 @@
         <h2>A Game Where you Hop Around</h2>
         <h5>Go as Fast as You Want!</h5>
       </div>
-      <img class="banner-img" src="/static/assets/images/gameplay2.png" alt="Gameplay Image 2"/>
+      <img class="banner-img" src="/static/assets/images/websave/gameplay2.png" alt="Gameplay Image 2"/>
     </div>
 
     <div class="banner-container">
         <h2>Global Leaderboards</h2>
         <h5>Try to be the fastest on each map, collect World Records!</h5>
-      <!--<img src="/static/assets/images/number1.png" alt="Number 1 Image" width="64" height="64""/> -->
+      <!--<img src="/static/assets/images/websave/number1.png" alt="Number 1 Image" width="64" height="64""/> -->
     </div>
 
     <div class="banner-container">
       <h2 class="banner-text text-light">Bunny Hop at Its Finest</h2>
-      <img class="banner-img" src="/static/assets/images/gameplay1.png" alt="Gameplay Image 1"/>
+      <img class="banner-img" src="/static/assets/images/websave/gameplay1.png" alt="Gameplay Image 1"/>
     </div>
 
     <div class="banner-container">
@@ -31,7 +31,7 @@
         <h2>Community Maps</h2>
         <h5>Anyone can make maps, even you!</h5>
       </div>
-      <img class="banner-img" src="/static/assets/images/blender.png" alt="Level Editor Image"/>
+      <img class="banner-img" src="/static/assets/images/websave/blender.png" alt="Level Editor Image"/>
     </div>
 
     <div class="banner-container">
@@ -44,7 +44,7 @@
         <h2 style="font-weight: bold;">MLG MODE</h2>
         <h5 style="font-weight: bold;">Coming soon</h5>
       </div>
-      <img class="banner-img" src="/static/assets/images/rainbowfrog.png" alt="Code Editor"/>
+      <img class="banner-img" src="/static/assets/images/websave/rainbowfrog.png" alt="Code Editor"/>
     </div>
 
     <div class="banner-container">
@@ -52,7 +52,7 @@
         <h2>Open Source</h2>
         <h5>Fix a bug, want to add features or just want to experiment? Now you can!</h5>
       </div>
-      <img class="banner-img" src="/static/assets/images/code.png" alt="Code Editor"/>
+      <img class="banner-img" src="/static/assets/images/websave/code.png" alt="Code Editor"/>
     </div>
 
   </div>

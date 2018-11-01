@@ -11,7 +11,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><router-link class="nav-link" to="/"><b-button variant=warning>Home</b-button></router-link></li>
@@ -22,33 +22,33 @@
       </ul>
 
       <div class="navbar-nav">
-          <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-              Account
-            </button>
+          <b-dropdown variant="warning" right text="Account" class="dropdown">
+            <!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 
-            <div class="dropdown-menu dropdown-menu-right">
+            </button> -->
+
+            <!-- <div class="dropdown-menu dropdown-menu-right"> -->
               <b-dropdown-item v-if="!logged()">
-                <router-link class="nav-link" to="/login">
-                  <b-button variant=warning>
+                <router-link class="nav-link text-primary text-center" to="/login">
+                  <!-- <b-button block variant=warning> -->
                     Login
-                  </b-button>
+                  <!-- </b-button> -->
                 </router-link>
               </b-dropdown-item>
 
               <b-dropdown-item v-if="!logged()">
-                <router-link class="nav-link" to="/register">
-                  <b-button variant=warning>
+                <router-link class="nav-link text-primary text-center" to="/register">
+                  <!-- <b-button block variant=warning> -->
                     Register
-                  </b-button>
+                  <!-- </b-button> -->
                 </router-link>
               </b-dropdown-item>
 
               <b-dropdown-item v-if="logged()"><a href="#">Profile</a></b-dropdown-item>
               <b-dropdown-item v-if="logged()"><a href="#">Settings</a></b-dropdown-item>
               <b-dropdown-item v-if="logged()"><a href="#">Logout</a></b-dropdown-item>
-            </div>
-          </div>
+            <!-- </div> -->
+          </b-dropdown>
       </div>
     </div>
   </nav>
