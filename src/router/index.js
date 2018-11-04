@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
 import MapInfo from '@/components/MapInfo'
 import Download from '@/components/Download'
 import Wiki from '@/components/Wiki'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import MapList from '@/components/MapList'
+import SetPassword from '@/components/SetPassword'
 
 Vue.use(Router)
 
@@ -16,8 +17,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Home',
+      component: Home
     },
     {
       path: '/download',
@@ -43,6 +44,11 @@ export default new Router({
       path: '/map/:id',
       name: 'MapInfo',
       component: MapInfo
+    },
+    {
+      path: '/setpassword/:token',
+      name: 'SetPassword',
+      component: SetPassword
     }
   ]
 })

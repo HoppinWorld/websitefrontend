@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     onSubmit(ev) {
-    // TODO: Move to https asap
+      ev.preventDefault();
       axios.post('https://hoppinworld.net:27015/register',
         {
           username: this.form.username,
@@ -52,7 +52,7 @@ export default {
         }
       ).then(response => {
         // TODO: Show "a confirmation email was sent to your inbox"
-        this.errors = []
+        this.errors = ['A Confirmation Email was sent to your Inbox.']
       }).catch(e => {
 	      this.errors.push(e)
 	      //errors foreach .response.{status,statusText}

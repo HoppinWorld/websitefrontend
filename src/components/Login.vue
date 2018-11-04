@@ -4,9 +4,6 @@
     <div v-for="err in errors">
       <h3 variant=error>{{err}}</h3>
     </div>
-    <div>
-      <h3 variant=error>Token: {{remote}}</h3>
-    </div>
     <b-form @submit="onSubmit">
       <b-form-group id="email" label="Email:" label-for="emailinput">
         <b-form-input id="emailinput" type="email" v-model="form.email" required placeholder="Enter Email"></b-form-input>
@@ -37,20 +34,18 @@ export default {
         password: '',
         rememberme: false
       },
-      errors: [],
-      remote: ''
+      errors: []
     }
   },
   methods: {
     onSubmit(ev) {
-    // TODO: Move to https asap
+      ev.preventDefault();
       axios.post('https://hoppinworld.net:27015/login',
         {
           email: this.form.email,
           password: this.form.password
         }
       ).then(response => {
-        this.remote = response.data
         globalStore.auth_token = response.data.token
         this.$router.push('/')
         this.errors = []
