@@ -1,30 +1,53 @@
 <template>
   <div class="d-flex flex-column justify-content-center align-items-center flex-wrap">
-    <h1>Map Info</h1>
-    <h3>{{map.name}}</h3>
-    <textarea class="nofocus" readonly :value="map.description" rows="8" cols="80"></textarea>
-    <div>
-      <a href="https://vuejs.org" target="_blank">Download</a>
+    <h1><span variant=warning>Map: </span><span variant=primary>{{map.name}}</span></h1>
+
+    <br/>
+    <!-- <textarea class="nofocus" readonly :value="map.description" rows="8" cols="80"></textarea> -->
+    <div v-if="hasPath">
+      <a :href="map.path" target="_blank"><b-button variant=success>Download</b-button></a>
     </div>
-    <div class="d-flex flex-row justify-content-center align-items-center flex-wrap">
+
+    <br/>
+    <br/>
+
+    <div class="d-flex flex-row justify-content-center container">
       <!-- Diff box component would go here -->
       <!-- diff & playcount row -->
       <div class="mx-2 flex-grid-2">
-        <h4>Difficulty: {{map.difficulty}}</h4>
+        <h2>Difficulty</h2>
+        <h3>{{map.difficulty}}</h3>
       </div>
-      <div class="mx-2 flex-grid-2">
-        <h4>Play Count: {{map.playcount}}</h4>
+
+      <div class="mx-1 flex-grid-1">
+        <h2>Mapper</h2>
+        <h3>{{map.mapper_name}}</h3>
       </div>
-      <!-- Categories and mapper -->
+
       <div class="mx-2 flex-grid-2">
-        <h4>Categories</h4>
-        <div v-for="cat in map.categories" :key="cat">
-          <p>{{cat}}</p>
-        </div>
+        <h2>Play Count</h2>
+        <h3>{{map.playcount}}</h3>
       </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="d-flex flex-row justify-content-center container">
+
+      <!-- Categories and tags -->
       <div class="mx-2 flex-grid-2">
-        <h4>Mapper: {{map.mapper}}</h4>
-        <!-- <p>Errors: {{ errors }}</p> -->
+        <h2>Categories</h2>
+        <ul class="list-group">
+          <li v-for="cat in map.categories" :key="cat"><h5>{{cat}}</h5></li>
+        </ul>
+      </div>
+
+      <div class="mx-2 flex-grid-2">
+        <h2>Tags</h2>
+        <ul class="list-group">
+          <li v-for="tag in map.tags" :key="tag"><h5>{{tag}}</h5></li>
+        </ul>
       </div>
     </div>
 
@@ -36,6 +59,7 @@
         <div class="col-md-2"><h5>Time: {{score.total_time}}</h5></div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -50,8 +74,11 @@ export default {
         difficulty: '',
         description: '',
         categories: [],
-        mapper: '',
-        playcount: 0
+        tags: [],
+        mapper: 0,
+        mapper_name: '',
+        playcount: 0,
+        path: ''
       },
       scores: [],
       errors: [],
@@ -61,6 +88,7 @@ export default {
     axios.get("https://hoppinworld.net:27015/map/"+this.$route.params.id)
     .then(response => {
       this.map = response.data
+      this.map.difficulty = this.map.difficulty.charAt(0).toUpperCase() + this.map.difficulty.slice(1);
     })
     .catch(e => {
       this.errors.push(e)
@@ -73,6 +101,11 @@ export default {
     .catch(e => {
       this.errors.push(e)
     })
+  },
+  methods: {
+    hasPath() {
+      return map.path !== '';
+    }
   }
 }
 </script>
