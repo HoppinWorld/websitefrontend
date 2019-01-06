@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="/">
-      <img class="d-inline-block align-top" alt="HoppinWorld" src="/static/assets/images/HoppinWorldPattern3BigTransparent2.png" width="48" height="48" />
+      <img class="d-inline-block align-top" alt="HoppinWorld" src="/static/assets/images/hoppinworldlogosmall.png" width="48" height="48" />
     </a>
 
     <a href="/" class="text-dark mr-3" style="position: relative; padding: 0px 80px;">

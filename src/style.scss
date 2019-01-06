@@ -11,6 +11,7 @@ Secondary/Yellow #E9D758
 White #FCF7FF
 */
 
+// Default?
 /*$theme-colors: (
   primary: #3185FC,
   success: #2bce51,
@@ -19,12 +20,21 @@ White #FCF7FF
   dark: #403F4C
 );*/
 
-$theme-colors: (
+// Old
+/*$theme-colors: (
   primary: #2660A4,
   success: #FC8941,
   warning: #E9D758,
   danger: #E63032,
   dark: #403F4C
+);*/
+
+$theme-colors: (
+  primary: #B70000,
+  success: #018e42,
+  warning: #050517,
+  danger: #B70000,
+  dark: #050517
 );
 
 //$btn-border-size-base: 0;
@@ -36,19 +46,33 @@ $theme-colors: (
   box-shadow: none !important;
 }
 
+.nav-link {
+    padding: 0 0.2em !important;
+}
+
+.nav-link .btn {
+    width: 7em;
+}
+
 body {
-	background-color: #FCF7FF !important;
+	background-color: #333138 !important;
+}
+
+nav {
+    border: 15px solid #333138;
 }
 
 .banner-img {
   overflow: hidden;
   width: 100%;
 }
+
 .banner-container {
   position: relative;
   margin-top: 10px;
   margin-bottom: 50px;
 }
+
 .banner-text {
     position: absolute;
     top: 50%;
