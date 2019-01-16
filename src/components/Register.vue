@@ -1,16 +1,19 @@
 <template>
   <div>
-    <h1>Register</h1>
+    <h1 class="text-light">Register</h1>
     <div v-for="err in errors">
       <h3 variant=error>{{err}}</h3>
     </div>
-    <b-form @submit="onSubmit">
-      <b-form-group id="username" label="Username:" label-for="usernameinput">
+    <b-form class="text-light" @submit="onSubmit">
+      <br/>
+      <!-- <b-form-group id="username" label="Username:" label-for="usernameinput"> -->
         <b-form-input id="usernameinput" type="text" v-model="form.username" required placeholder="Enter Username"></b-form-input>
-      </b-form-group>
-      <b-form-group id="email" label="Email:" label-for="emailinput">
+      <!--</b-form-group> -->
+      <br/>
+      <!--<b-form-group id="email" label="Email:" label-for="emailinput"> -->
         <b-form-input id="emailinput" type="email" v-model="form.email" required placeholder="Enter Email"></b-form-input>
-      </b-form-group>
+      <!--</b-form-group> -->
+      <br/>
       <b-form-group id="rememberGroup">
         <b-form-checkbox-group v-model="form.eula" id="eulainput">
           <b-form-checkbox required value="eula">Accept <a href="#">Terms and conditions</a></b-form-checkbox>

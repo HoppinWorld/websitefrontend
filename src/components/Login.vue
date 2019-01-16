@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>Login</h1>
+    <h1 class="text-light">Login</h1>
     <div v-for="err in errors">
       <h3 variant=error>{{err}}</h3>
     </div>
-    <b-form @submit="onSubmit">
+    <b-form class="text-light" @submit="onSubmit">
       <b-form-group id="email" label="Email:" label-for="emailinput">
         <b-form-input id="emailinput" type="email" v-model="form.email" required placeholder="Enter Email"></b-form-input>
       </b-form-group>

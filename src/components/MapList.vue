@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Map Listing</h1>
+    <h1 class="text-light">Map Repository</h1>
     <div v-for="err in errors">
       <h3 variant=error>{{err}}</h3>
     </div>
     <div v-for="map in maps">
-      <h3 style="display: inline-block; vertical-align: middle;">{{map.name}}</h3>
-      <router-link class="nav-link map-button" :to="mapLinkFromId(map.id)"><b-button variant=success>Info</b-button></router-link>
+      <!-- <h3 class="text-light" style="display: inline-block; vertical-align: middle;">{{map.name}}</h3> -->
+      <router-link class="nav-link map-button" :to="mapLinkFromId(map.id)"><b-button variant=success>{{map.name}}</b-button></router-link>
     </div>
   </div>
 </template>

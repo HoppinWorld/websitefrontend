@@ -30,9 +30,7 @@
             <!-- <div class="dropdown-menu dropdown-menu-right"> -->
               <b-dropdown-item v-if="!logged()">
                 <router-link class="nav-link text-primary text-center" to="/login">
-                  <!-- <b-button block variant=warning> -->
                     Login
-                  <!-- </b-button> -->
                 </router-link>
               </b-dropdown-item>
 
@@ -44,9 +42,21 @@
                 </router-link>
               </b-dropdown-item>
 
-              <b-dropdown-item v-if="logged()"><a href="#">Profile</a></b-dropdown-item>
-              <b-dropdown-item v-if="logged()"><a href="#">Settings</a></b-dropdown-item>
-              <b-dropdown-item v-if="logged()"><a href="#">Logout</a></b-dropdown-item>
+              <b-dropdown-item v-if="logged()">
+                <router-link class="nav-link text-primary text-center" to="/profile">
+                  Profile
+                </router-link>
+              </b-dropdown-item>
+              <b-dropdown-item v-if="logged()">
+              <router-link class="nav-link text-primary text-center" to="/settings">
+                  Settings
+                </router-link>
+              </b-dropdown-item>
+              <b-dropdown-item v-if="logged()">
+              <router-link class="nav-link text-primary text-center" to="/logout">
+                  Logout
+                </router-link>
+              </b-dropdown-item>
             <!-- </div> -->
           </b-dropdown>
       </div>

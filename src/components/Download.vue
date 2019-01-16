@@ -1,16 +1,20 @@
 <template>
   <div>
-  	<h1 class="mt-3">Downloading the Game</h1>
-    <p>Here you can find the official download links for the HoppinWorld Game</p>
+  	<h1 class="mt-3 text-light">Downloading the Game</h1>
+    <p class="text-light">Here you can find the official download links for the HoppinWorld Game</p>
     <a href="https://github.com/HoppinWorld/hoppinworldclient/releases" target="_blank"><b-btn variant="primary">Game Download</b-btn></a>
 
     <a href="https://hoppinworld.net/wiki/install.html" target="_blank"><b-btn variant="warning">Installation instructions</b-btn></a>
 
-    <h2 class="mt-5">How to Play</h2>
+    <h2 class="mt-5 text-light">How to Play</h2>
     <my-video :sources="video.sources" :options="video.options"></my-video>
+    <p class="text-light">
+    Original video made by <a href="https://www.youtube.com/channel/UCpwj022MUCJFWaCrirTtdQw">Dinoswarleaf</a><br/>
+    <a href="https://www.youtube.com/watch?v=lGQoUTPEQSs">Video Link</a>
+    </p>
 
-    <h2 class="mt-5">Contribute?</h2>
-    <p>Fix a bug, want to add features or just want to experiment? Now you can!</p>
+    <h2 class="mt-5 text-light">Contribute?</h2>
+    <p class="text-light">Fix a bug, want to add features or just want to experiment? Now you can!</p>
     <a href="https://github.com/HoppinWorld/" target="_blank">
       <b-btn variant="warning"> <font-awesome-icon icon="Github" />Source Code</b-btn>
     </a>
