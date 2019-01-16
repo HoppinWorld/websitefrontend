@@ -22,7 +22,14 @@
           <b-form-checkbox required value="emails">Receive informational emails</b-form-checkbox>
         </b-form-checkbox-group>
       </b-form-group>
-      <b-button type="submit" variant="primary">Register</b-button>
+      <vue-recaptcha
+        ref="recaptcha"
+        @verify="onCaptchaVerified"
+        @expired="onCaptchaExpired"
+        size="invisible"
+        sitekey="6Ld2V4oUAAAAAE9QcFt88mUWWAcQ6efoYhA3fOSF">
+      </vue-recaptcha>
+      <b-button :disabled="status==='submitting'" type="submit" variant="primary">Register</b-button>
     </b-form>
   </div>
 </template>
@@ -47,6 +54,8 @@ export default {
   },
   methods: {
     onSubmit(ev) {
+      this.$refs.recaptcha.execute();
+      
       ev.preventDefault();
       axios.post('https://hoppinworld.net:27015/register',
         {
