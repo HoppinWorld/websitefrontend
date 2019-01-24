@@ -5,17 +5,17 @@
       <h3 variant=error>{{err}}</h3>
     </div>
     <b-form class="text-light" @submit="onSubmit">
-      <b-form-group id="email" label="Email:" label-for="emailinput">
-        <b-form-input id="emailinput" type="email" v-model="form.email" required placeholder="Enter Email"></b-form-input>
-      </b-form-group>
-      <b-form-group id="password" label="Password:" label-for="passwordinput">
-        <b-form-input id="passwordinput" type="password" v-model="form.password" required placeholder="Enter Password"></b-form-input>
-      </b-form-group>
+      <br/>
+      <b-form-input id="emailinput" type="email" v-model="form.email" required placeholder="Enter Email"></b-form-input>
+      <br/>
+      <b-form-input id="passwordinput" type="password" v-model="form.password" required placeholder="Enter Password"></b-form-input>
+      <br/>
       <b-form-group id="rememberGroup">
         <b-form-checkbox-group v-model="form.rememberme" id="rememberinput">
           <b-form-checkbox value="rememberme">Remember Me</b-form-checkbox>
         </b-form-checkbox-group>
       </b-form-group>
+      <router-link to="/passwordreset"><b-button variant=warning>Lost Password</b-button></router-link>
       <b-button type="submit" variant="primary">Login</b-button>
     </b-form>
   </div>

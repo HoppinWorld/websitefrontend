@@ -9,6 +9,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import MapList from '@/components/MapList'
 import SetPassword from '@/components/SetPassword'
+import ResetPassword from '@/components/ResetPassword'
 
 Vue.use(Router)
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/setpassword/:token',
       name: 'SetPassword',
       component: SetPassword
+    },
+    {
+      path: '/passwordreset',
+      name: 'ResetPassword',
+      component: ResetPassword
     }
   ]
 })
