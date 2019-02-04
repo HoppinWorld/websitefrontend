@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Reset Password</h1>
-    <div v-for="err in errors">
+    <div class="text-light" v-for="err in errors">
       <h3 variant=error>{{err}}</h3>
     </div>
     <b-form @submit.prevent="submit">
