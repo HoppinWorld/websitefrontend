@@ -15,8 +15,10 @@
       <!--</b-form-group> -->
       <br/>
       <b-form-group id="rememberGroup">
-        <b-form-checkbox-group v-model="form.eula" id="eulainput">
-          <b-form-checkbox required value="eula">Accept <a href="#">Terms and conditions</a></b-form-checkbox>
+        <b-form-checkbox-group id="eulainput">
+          <input type="checkbox" v-model="form.eula" true-value="yes" false-value="no" required>
+            Accept <a href="#">Terms and conditions</a>
+          </input>
         </b-form-checkbox-group>
         <b-form-checkbox-group v-model="form.emails" id="emailsinput">
           <b-form-checkbox required value="emails">Receive informational emails</b-form-checkbox>
@@ -59,7 +61,12 @@ export default {
   methods: {
     submit(ev) {
       console.log("submit");
-      this.$refs.recaptcha.execute();
+      if(this.form.eula === 'yes'){
+        this.$refs.recaptcha.execute();
+      } else {
+        this.errors = ['You must accept the terms of service to create an account.'];
+        this.status = '';
+      }
     },
     onCaptchaVerified: function (recaptchaToken) {
       console.log("onCaptchaVerified");
